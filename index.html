@@ -3,94 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <title>Cheff Matt Copy</title>
-    <style type="text/tailwind">
+    <!-- <style type="text/tailwind">
       @layer utilities {
         .hamburger-toggle {
           @apply [&>div]:h-0 [&>div]:bg-white [&>div::before]:before:translate-y-0 [&>div::before]:before:rotate-45 [&>div::before]:after:translate-y-0 [&>div::before]:after:-rotate-45;
         }
       }
-    </style>
+    </style> -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="font-poppins bg-background overflow-x-auto whitespace-nowrap">
-    <!--------------  Side Bar --------------------------->
 
+  <body class="font-poppins bg-background overflow-x-auto whitespace-nowrap">
+    <!--------------------- Hero Banner begins here ------------------------>
     <section
       class="mx-auto bg-slate-900 text-white flex h-screen bg-[url('../assets/hero.jpeg')] bg-cover"
     >
+      <!--------------  Side Bar --------------------------->
       <div class="side-bar w-1/12 bg-zinc-900 opacity-85 relative">
+        <!-- hamburger icon -->
         <div
           id="toggleMenu"
-          class="hamburger-toggle toggle-icon grid place-content-center absolute top-8 left-4 cursor-pointer"
+          class="grid place-content-center absolute top-8 left-4 cursor-pointer"
         >
           <div
-            class="w-8 h-1 bg-white rounded full before:content-[''] before:absolute before:w-8 before:h-1 before:bg-white before:rounded-full before:translate-y-2 after:content-[''] after:absolute after:w-8 after:h-1 after:bg-white after:rounded-full after:translate-y-4 transition-all duration-150 before:transition-all before:duration-150 after:transition-all after:duration-150"
+            class="h-1 w-8 bg-white rounded-full before:content-[''] before:absolute before:w-8 before:h-1 before:bg-white before:rounded-full before:translate-y-2 after:content-[''] after:absolute after:w-8 after:h-1 after:bg-white after:rounded-full after:translate-y-4 transition-all duration-150 before:transition-all before:duration-150 after:transition-all after:duration-150"
           ></div>
         </div>
+
+        <!---------------- Navbar starts here ----------------->
+        <nav class="nav-items hidden">
+          <a class="nav-item" href="#">Home</a>
+          <a class="nav-item" href="#">Products</a>
+          <a class="nav-item" href="#">Meet Chef Matt</a>
+          <a class="nav-item" href="#">FAQ</a>
+          <a class="nav-item" href="#">Connect with us</a>
+        </nav>
       </div>
 
-      <!-- <div class="w-1/5 bg-zinc-900 opacity-85">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-        <div></div>
-      </div> -->
       <div class="w-full flex justify-center relative">
         <button
-          class="border-solid border-4 h-[4.75rem] w-[22.438rem] font-poppins absolute bottom-12 text-2xl"
+          class="border-solid border-4 h-[4.75rem] w-[22.438rem] font-poppins absolute bottom-16 text-2xl"
         >
           Meet Cheff Matt
         </button>
+
+        <!-- Carousel dots -->
         <ul class="absolute bottom-4 flex gap-3">
           <li class="w-2 h-2 rounded-full bg-white"></li>
           <li class="w-2 h-2 rounded-full bg-white"></li>
           <li class="w-2 h-2 rounded-full bg-white"></li>
-          <li class="w-2 h-2 rounded-full bg-white"></li>
+          <li
+            class="w-2 h-2 rounded-full border-[1px] border-white border-solid"
+          ></li>
         </ul>
       </div>
     </section>
-    <section class="bg-background">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquid
-        consequuntur, voluptate illo explicabo maiores fuga quaerat ex
-        aspernatur quas, dignissimos cupiditate obcaecati! Voluptate a enim sint
-        quia iusto voluptatibus?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, nisi
-        optio sit velit porro, repellat tenetur et repellendus mollitia dolorum
-        sequi, temporibus vitae. Eius provident sed omnis debitis, suscipit
-        aperiam?
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-        tempore quia neque soluta deserunt, molestiae, illum autem dolores
-        nesciunt ad maiores debitis, repellendus sequi! Porro totam ducimus
-        officiis commodi blanditiis!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum
-        quas neque libero magni nulla illo soluta beatae veniam. Harum, numquam.
-        Obcaecati rerum quibusdam cupiditate dolor quo, laborum ipsa! Sequi!
-      </p>
+
+    <section class="bg-[#180c0c] text-white pl-[6.94rem] pt-24 pb-12">
+      <div class="products-text-wrapper w-2/5">
+        <h3
+          class="text-[#D29A5A] text-4xl relative after:content-[''] after:absolute after:w-full after:h-1 after:bg-[#D29A5A] after:-bottom-4 after:left-0"
+        >
+          CHEF MATT PRODUCTS
+        </h3>
+        <p class="text-lg text-white mt-8 text-wrap">
+          Shop Gourmet Chef Quality products from the Chef Matt brand. Chef it
+          yourself and Thank us later.
+        </p>
+        <!-- Swiper -->
+        <div class="swiper">
+          <div class="swiper-wrapper opacity-100 bg-white"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
     </section>
     <script src="./myscript.js"></script>
   </body>
