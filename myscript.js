@@ -23,47 +23,25 @@ toggleMenu.addEventListener("click", () => {
 });
 
 // ---------- Initialize Swiper -------------------
-let appendNumber = 10;
-let prependNumber = 1;
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  centeredSlides: true,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  virtual: {
-    slides: (function () {
-      const slides = [];
-      for (var i = 0; i < 10; i += 1) {
-        slides.push("Slide " + (i + 1));
-      }
-      return slides;
-    })(),
-  },
+const carousel = document.querySelector(".carousel");
+const carouselItems = document.querySelectorAll(".carousel-item");
+const totalItems = carouselItems.length;
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+
+let currentIndex = 0;
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % totalItems;
+  updateCarousel();
 });
 
-document.querySelector(".slide-1").addEventListener("click", function (e) {
-  e.preventDefault();
-  swiper.slideTo(0, 0);
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  updateCarousel();
 });
 
-document.querySelector(".slide-10").addEventListener("click", function (e) {
-  e.preventDefault();
-  swiper.slideTo(9, 0);
-});
-
-document
-  .querySelector(".prepend-2-slides")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    swiper.virtual.prependSlide([
-      "Slide " + --prependNumber,
-      "Slide " + --prependNumber,
-    ]);
-  });
+function updateCarousel() {
+  const offset = -currentIndex * carouselItems[0].offsetWidth;
+  carousel.style.transform = `translateX(${offset}px)`;
+}

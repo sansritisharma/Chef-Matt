@@ -6,11 +6,26 @@
     .hamburger-toggle {
       @apply [&>div]:h-0 [&>div]:bg-white [&>div::before]:before:translate-y-0 [&>div::before]:before:-rotate-45 [&>div::before]:after:translate-y-0 [&>div::before]:after:rotate-45;
     }
-    .swiper {
-        @apply w-full h-[300px] mx-auto my-5;
+
+    .carousel-container {
+    @apply overflow-hidden;
     }
-    .swiper-slide {
-        @apply text-center text-lg flex justify-center items-center;
-        background: #fff;
+    .carousel {
+    @apply flex transition-transform duration-[0.5s] ease-[ease];
     }
+    .carousel-inner {
+    @apply flex;
+    }
+    .carousel-item {
+    @apply flex-[0_0_auto] w-[34%] mr-[15px];
+    /* Adjust as needed */
+    /* Adjust as needed */
+    }
+    .card {
+    @apply w-full bg-white border p-5 rounded-lg border-solid border-[#ccc];
+    /* Style your card as needed */
+    }
+
+    
+
   }
