@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer utilities {
+    body::-webkit-scrollbar {
+      @apply hidden;
+    }
+
     .hamburger-toggle {
       @apply [&>div]:h-0 [&>div]:bg-white [&>div::before]:before:translate-y-0 [&>div::before]:before:-rotate-45 [&>div::before]:after:translate-y-0 [&>div::before]:after:rotate-45;
+    }
+
+    .nav-item {
+      @apply text-[22px] uppercase px-[22px] py-3.5;
     }
 
     .carousel-container {

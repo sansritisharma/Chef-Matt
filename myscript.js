@@ -1,25 +1,26 @@
-// const toggleMenu = document.getElementById("toggleMenu");
-// toggleMenu.addEventListener("click", () => {
-//   console.log(toggleMenu);
-//   toggleMenu.classList.toggle("hamburger-toggle");
-// });
+document.getElementById("toggleMenu").addEventListener("click", function () {
+  const openIcon = document.querySelector("#toggleMenu .open");
+  const closeIcon = document.querySelector("#toggleMenu .close");
+  const sidebar_el = document.querySelector(".side-bar");
+  const sidebarImage = document.getElementById("sidebarImage");
+  const navBar = document.getElementById("navBar");
 
-var firstLoad = true;
-const toggleMenu = document.getElementById("toggleMenu");
-const sidebar_el = document.querySelector(".side-bar");
+  // Toggle visibility of icons
+  openIcon.classList.toggle("hidden");
+  closeIcon.classList.toggle("hidden");
 
-function toggleIcon() {
-  toggleMenu.classList.toggle("hamburger-toggle");
-}
-
-toggleMenu.addEventListener("click", () => {
-  console.log("clicked");
-  toggleIcon();
   if (!sidebar_el.classList.contains("w-1/5")) {
     sidebar_el.classList.add("w-1/5"); //expanded state
   } else {
     sidebar_el.classList.remove("w-1/5"); //collapsed
   }
+  // Sidebar image
+  sidebarImage.classList.toggle("hidden");
+
+  //Navbar toggle
+  navBar.classList.toggle("hidden");
+  navBar.classList.toggle("flex");
+  navBar.classList.toggle("flex-col");
 });
 
 // ---------- Initialize Swiper -------------------

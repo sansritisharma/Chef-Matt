@@ -15,31 +15,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="font-poppins bg-background overflow-x-auto whitespace-nowrap">
+  <body class="font-poppins m-0 p-0 h-full bg-background whitespace-nowrap">
     <!--------------------- Hero Banner begins here ------------------------>
     <div
       class="mx-auto bg-slate-900 text-white flex h-screen bg-[url('../assets/hero.jpeg')] bg-cover"
     >
       <!--------------  Side Bar --------------------------->
       <div
-        class="side-bar w-1/12 bg-zinc-900 opacity-85 relative border-r-[5px] border-r-[#D29A5A] border-solid"
+        class="side-bar w-1/12 bg-zinc-900 opacity-85 fixed h-screen z-10 border-r-[5px] border-r-[#D29A5A] border-solid"
       >
-        <div
-          id="toggleMenu"
-          class="grid place-content-center absolute top-8 left-4 cursor-pointer"
-        >
-          <div
-            class="h-1 w-8 bg-white rounded-full before:content-[''] before:absolute before:w-8 before:h-1 before:bg-white before:rounded-full before:translate-y-2 after:content-[''] after:absolute after:w-8 after:h-1 after:bg-white after:rounded-full after:translate-y-4 transition-all duration-150 before:transition-all before:duration-150 after:transition-all after:duration-150"
-          ></div>
+        <!------ Toggle Icon ------------------>
+        <div id="toggleMenu" class="absolute top-8 left-4 cursor-pointer ham">
+          <img src="./assets/hamburger.png" alt="hamburger-icon" class="open" />
+          <img
+            src="./assets/Close_round.png"
+            alt="hamburger-icon"
+            class="close hidden"
+          />
         </div>
 
+        <!---- Sidebar Image ---------------->
         <div
-          clas="w-[28rem] h-[18.75rem] bg-[url('../assets/cursive-text.jpeg')]"
+          class="absolute w-[22rem] h-[14rem] bg-[url('../assets/cursive-text.jpeg')] z-20 bg-cover rotate-[268deg] left-[-131px] top-[300px]"
+          id="sidebarImage"
         ></div>
 
         <!---------------- Navbar starts here ----------------->
-        <nav class="nav-items hidden">
-          <a class="nav-item" href="#">Home</a>
+        <nav
+          id="navBar"
+          class="nav-items fixed z-20 top-[200px] hidden w-full transition-width duration-500 ease-in-out"
+        >
+          <a class="nav-item text-secondary" href="#">Home</a>
           <a class="nav-item" href="#">Products</a>
           <a class="nav-item" href="#">Meet Chef Matt</a>
           <a class="nav-item" href="#">FAQ</a>
@@ -47,9 +53,10 @@
         </nav>
       </div>
 
+      <!---------- Hero Banner Content ----------------->
       <div class="w-full flex justify-center relative">
         <button
-          class="border-solid border-4 h-[4.75rem] w-[22.438rem] font-poppins absolute bottom-16 text-2xl"
+          class="text-white border-solid border-4 h-[4.75rem] w-[22.438rem] font-poppins absolute bottom-16 text-2xl"
         >
           Meet Cheff Matt
         </button>
@@ -66,9 +73,9 @@
       </div>
     </div>
 
-    <div class="content-wrapper pl-[6.94rem] bg-background">
+    <div class="content-wrapper pl-[7.5rem] bg-background">
       <!-------------- Products Segment ---------------->
-      <div class="products-text-wrapper w-2/5 pt-28 pb-24">
+      <div class="products-text-wrapper pl-[4rem] w-2/5 pt-28 pb-24">
         <div
           class="text-[#D29A5A] text-4xl relative after:content-[''] after:absolute after:w-full after:h-1 after:bg-[#D29A5A] after:-bottom-4 after:left-0"
         >
@@ -141,6 +148,68 @@
         </ul>
       </div>
 
+      <!---------- Flexbox segment ------------------------>
+      <div class="flex flex-col mt-[80px]">
+        <div class="w-full max-md:max-w-full">
+          <div class="flex max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <div
+                class="grow px-8 w-full bg-white max-md:px-5 max-md:max-w-full"
+              >
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div
+                      class="flex z-10 flex-col self-stretch my-auto text-stone-950 max-md:mt-10"
+                    >
+                      <div class="text-4xl">SUBSCRIBE & SAVE</div>
+                      <div class="mt-10 text-base">
+                        Join Chef Matt’s Monthly Subscription
+                        <br />
+                        and bring world class chef quality
+                        <br />
+                        meals to your home.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <img
+                      loading="lazy"
+                      src="./assets/subscribe.jpeg"
+                      class="grow w-full aspect-[1.43]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <img
+                loading="lazy"
+                src="./assets/meet-the-chef.jpeg"
+                class="grow w-full aspect-[2.78] max-md:max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="w-full max-md:max-w-full">
+          <div class="flex max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <img
+                loading="lazy"
+                src="./assets/recipies.jpeg"
+                class="grow w-full aspect-[2.78] max-md:max-w-full"
+              />
+            </div>
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <img
+                loading="lazy"
+                src="./assets/chef-matt-live.jpeg"
+                class="grow w-full aspect-[2.78] max-md:max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!----------- Sign up Segment ------------------------->
       <div
         class="sign-up-segment h-[25rem] bg-[url('../assets/promo.jpeg')] bg-cover flex flex-col px-5 text-white w-full pt-40 pl-24"
@@ -173,7 +242,7 @@
           class="flex gap-5 justify-between px-5 max-md:flex-wrap border-b-4 border-b-[solid] border-secondary pb-10"
         >
           <div class="flex flex-col">
-            <div class="flex gap-5 text-2xl text-orange-400">
+            <div class="flex gap-5 text-2xl text-orange-400 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -197,7 +266,7 @@
               Guaranteed Delivery
             </div>
           </div>
-          <div class="flex gap-5 items-start">
+          <div class="flex gap-5 items-start cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -220,7 +289,7 @@
               </div>
             </div>
           </div>
-          <div class="flex gap-5 items-start">
+          <div class="flex gap-5 items-start cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
